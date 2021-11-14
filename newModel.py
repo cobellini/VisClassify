@@ -42,8 +42,6 @@ def test_new(dataset, class_labels):
     classifier_obj = Classifier(PIXELS, class_labels, dataset)  
     train_image, train_labels, validation_image, validation_label = classifier_obj.data_preprocessing()
 
-    # pleb = class_weight.compute_class_weight('balanced', np.unique(train_labels), train_labels)
-
     class_weights = {
     0: 29.7, 
     1: 6.7, 
@@ -96,13 +94,8 @@ def test_new(dataset, class_labels):
 
     return model_history
 
-
-
-
 class_labels, dataset = get_Dataset()
-
 history = test_new(dataset, class_labels)
-
 metrics_obj = ClassifierEvaluation(history)
 metrics_obj.classifier_accuracy()
 metrics_obj.classifier_error()

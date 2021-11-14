@@ -63,7 +63,6 @@ def generate_class_labels(json_data):
     class_labels[unique_vis[z]] = z
     # class_labels[unique_vis[z]] = z + 1
 
-  print(class_labels)
  
   return class_labels
 
